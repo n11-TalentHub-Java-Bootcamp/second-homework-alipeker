@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Connection settings -->
+        <property name="ali.hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="ali.hibernate.connection.url">jdbc:postgresql://localhost:5432/test</property>
+        <property name="ali.hibernate.connection.username">postgres</property>
+        <property name="ali.hibernate.connection.password">1234</property>
+
+        <!-- SQL dialect -->
+        <property name="ali.hibernate.dialect">org.ali.hibernate.dialect.PostgreSQL10Dialect</property>
+
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Update database on startup -->
+        <property name="ali.hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Annotated ali.entity classes -->
+        <mapping class="ali.entity.Category"/>
+        <mapping class="ali.entity.Product"/>
+        <mapping class="ali.entity.ProductReview"/>
+        <mapping class="ali.entity.User"/>
+
+
+    </session-factory>
+</hibernate-configuration>

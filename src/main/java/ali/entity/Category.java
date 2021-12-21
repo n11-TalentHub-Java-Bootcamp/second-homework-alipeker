@@ -1,10 +1,11 @@
 package ali.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "CATEGORY")
-public class Category {
+public class Category implements Serializable {
 
     @SequenceGenerator(name = "generator",sequenceName = "CATEGORY_ID_SEQ")
     @Id

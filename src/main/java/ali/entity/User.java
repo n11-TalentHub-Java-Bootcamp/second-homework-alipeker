@@ -1,9 +1,13 @@
 package ali.entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "USERS")
-public class User {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class User implements Serializable {
 
     @SequenceGenerator(name = "generator",sequenceName = "USER_ID_SEQ")
     @Id
